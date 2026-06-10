@@ -6,13 +6,21 @@ import java.util.Stack;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runLinkedList(); //Linked list 
+        runLinkedList();
+        System.out.println("--------------");
         runQueue(); //  Colas 
+        System.out.println("--------------");
         runStack();  //Pilas 
+        System.out.println("--------------");
         String texto = "COMPUTACION";
         Ejercicio1 ejercicio1 = new Ejercicio1();
-        String invertido = ejercicio1.inveString(texto);
-        System.out.println(invertido);
+        String invertido = ejercicio1.invertString(texto);
+        System.out.println("Palabra invertida: " + invertido);
+        System.out.println("--------------");
+        Ejercicio2 palindromo = new Ejercicio2();
+        System.out.println();
+        System.out.println("Radar es palindromo? " + palindromo.esPalindromo("Radar"));
+        System.out.println("Computacion es palindromo? " + palindromo.esPalindromo("Computacion"));
         
     }
 
@@ -22,8 +30,8 @@ public class App {
         pila.push("B");
         pila.push("C");
         String elemento = pila.pop();
-        System.out.println(pila.size());   
-        System.out.println(elemento);  
+        System.out.println("Tamaño: " + pila.size());   
+        System.out.println("Elemento: " + elemento);  
 
         Deque<String> pila2 = new ArrayDeque<>(); // Recomendado 
         Deque<String> pila3 = new LinkedList<>();
@@ -42,11 +50,11 @@ public class App {
         System.out.println("Tamaño: " + cola.size()); // imprime el tamanio desde 1 2 3 ....
         System.out.println("Cual es peek? " + cola.peek());
         System.out.println("Primero en atenderse: " + cola.poll()); // lo atiende y lo saca 
-        System.out.println(cola.size());
+        System.out.println("Tamaño: " + cola.size());
 
         while (!cola.isEmpty()) {
             String cliente = cola.poll();
-            System.out.println("Atendi a cliente" + cliente);
+            System.out.println("Atendi a cliente: " + cliente);
 
             
         }
@@ -67,14 +75,14 @@ public class App {
         nombres.add("Maria");
         nombres.add("Diego");
        
-        System.out.println(nombres.getFirst());
-        System.out.println(nombres.get(2));
-        System.out.println(nombres.getLast());
+        System.out.println("Primero: " + nombres.getFirst());
+        System.out.println("Tercero: " + nombres.get(2));
+        System.out.println("Último: " + nombres.getLast());
         System.out.println();
 
-        System.out.println(nombres.peek()); // peek retorna el primer elemento pero no lo saca o elimina 
-        System.out.println(nombres.pop()); // pop elimina el primer elemento de la lista 
-        System.out.println(nombres.size());// Devuelve el tamanio
+        System.out.println("Primer elemento (peek): " + nombres.peek()); // peek retorna el primer elemento pero no lo saca o elimina 
+        System.out.println("Elemento eliminado: " + nombres.pop()); // pop elimina el primer elemento de la lista 
+        System.out.println("Tamaño: " + nombres.size());// Devuelve el tamanio
 
     }
 }

@@ -1,30 +1,21 @@
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Ejercicio1 {
 
-    // Metodo que devuelve una cadena de 
-    //texto invertido 
-    // texto -> COMPUTACION
-    // return -> NOICATUPMOC
+    //Devuelve cadena de texto invertida
+    //Texto : COMPUTACION
+    //p invertida: NOICATUPMOC
     
-    public String inveString (String texto){
-        
-        Stack< Character> pila = new Stack<>();
-        for ( int i = 0 ; i< texto.length(); i++){
-           texto.charAt(i); // Devuelve la parabra del texto 
-            pila.push(texto.charAt(i)); 
-        }
-        
-        texto.toCharArray(); // Devuelve en arreglo 
-
-        for (char letra : texto.toCharArray()){
+    public String invertString(String texto){
+        Deque<Character> pila = new ArrayDeque<>();
+        String invert = "";
+        for(char letra : texto.toCharArray()){
             pila.push(letra);
         }
-        
-        String invertido = "";
-        while(!pila.isEmpty()){
-            invertido+= pila.pop();
+        while (!pila.isEmpty()) {
+            invert += pila.pop();
         }
-        return invertido;   
+        return invert;
     }
 }
